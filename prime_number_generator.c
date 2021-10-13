@@ -6,8 +6,11 @@ static volatile int keepRunning = 1;
 int main ()
 {
     /* local variable definition */
-    int num = 2;
-    int factor = 2;
+    unsigned long long int num = 2;
+    unsigned long long int factor = 2;
+    printf("Enter starting number: \n # ");
+    scanf("%llu", &num);
+    printf("Starting number: %llu\n",num);
     char cwd[256];
     FILE *fp;
     getcwd(cwd, sizeof(cwd));
@@ -20,7 +23,7 @@ int main ()
             }
         }
         if(factor > (num/factor)){
-            fprintf(fp, "%d\n",num);
+            fprintf(fp, "%llu\n",num);
         }
         num++;
     }
